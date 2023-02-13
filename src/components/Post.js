@@ -15,6 +15,14 @@ export default function Post (props){
       setTotalLikes(totalLikes - 1);
     }
   }
+
+  const clickImage = () => {
+    if (color === "preto"){
+      setColor("vermelho m hydrated");
+      setHeart("heart");
+      setTotalLikes(totalLikes + 1);
+    }
+  }
   
   const savePost = () => {
     if (saved === "bookmark-outline"){
@@ -37,7 +45,7 @@ export default function Post (props){
             </div>
 
             <div class="conteudo">
-              <img onClick={like} src={props.postPic} alt={props.postName} data-test="post-image"/>
+              <img onClick={clickImage} src={props.postPic} alt={props.postName} data-test="post-image"/>
             </div>
 
             <div class="fundo">
