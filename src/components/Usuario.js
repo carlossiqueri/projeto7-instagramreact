@@ -5,14 +5,14 @@ export default function Usuario (){
     const [name, setName] = useState ("");
     const [pic, setPic] = useState (anonymousUserPic);
 
-    let userName = !name ? "Realize o login!" : `${name}`;
+    let userText = !name ? "Realize o login!" : `${name}`;
 
-    function changePic(){
+    const changePic = () => {
       const userPic = prompt ("Insira o link da sua foto de usuário.");
       !userPic ? setPic (anonymousUserPic): setPic(userPic);
     }
     
-    function changeUserName(){
+    const changeUserName = ()  => {
       const validName = prompt("Qual o seu nome de usuário?");
       setName(validName);
     }
@@ -22,7 +22,7 @@ export default function Usuario (){
         <img onClick={changePic} src={pic} alt="imagem de perfil" />
         <div class="texto">
           <span>
-            <strong>{userName}</strong>
+            <strong>{userText}</strong>
             <ion-icon onClick={changeUserName} name="pencil"></ion-icon>
           </span>
         </div>
